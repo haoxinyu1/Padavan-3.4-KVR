@@ -158,6 +158,7 @@ endif
 dir_$(CONFIG_FIRMWARE_INCLUDE_SSOBFS)			+= simple-obfs
 dir_$(CONFIG_FIRMWARE_INCLUDE_ZEROTIER)			+= zerotier
 dir_$(CONFIG_FIRMWARE_INCLUDE_WYY)			+= unblockmusic
+dir_$(CONFIG_FIRMWARE_INCLUDE_ZSH)	            += zsh
 dir_$(OPENSSH_ENABLED)					+= openssh
 dir_$(DROPBEAR_ENABLED)					+= dropbear
 dir_$(CONFIG_FIRMWARE_INCLUDE_HTOP)			+= htop
