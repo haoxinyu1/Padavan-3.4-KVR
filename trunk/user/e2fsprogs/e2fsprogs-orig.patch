@@ -136,8 +136,8 @@ diff -urw e2fsprogs-1.44.4-ref/misc/mke2fs.conf.in e2fsprogs-1.44.4/misc/mke2fs.
  
  PROG_SUBDIRS=e2fsck $(DEBUGFS_DIR) misc $(RESIZE_DIR) tests/progs po \
  	$(E2SCRUB_DIR)
---- e2fsprogs-1.45.7-ref/configure.ac	2019-09-22 21:24:14.103710000 +0800
-+++ e2fsprogs-1.45.7/configure.ac	2019-09-22 21:24:42.528758384 +0800
+--- e2fsprogs-1.46.5-ref/configure.ac	2019-09-22 21:24:14.103710000 +0800
++++ e2fsprogs-1.46.5/configure.ac	2019-09-22 21:24:42.528758384 +0800
 @@ -873,7 +873,7 @@ AC_SUBST(GETTEXT_PACKAGE)
  AC_SUBST(PACKAGE)
  AC_SUBST(VERSION)
