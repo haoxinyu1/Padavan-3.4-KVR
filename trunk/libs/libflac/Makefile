@@ -25,21 +25,21 @@ config_test:
 
 configure:
 	( cd $(SRC_NAME) ; \
-	./autogen.sh ; \
+	autoreconf -fi ; \
 	./configure \
 		--prefix=$(STAGEDIR) \
 		$(if $(LIBS_BUILD_SHARED),--disable-static,--enable-static) \
 		$(if $(LIBS_BUILD_SHARED),--enable-shared,--disable-shared) \
 		--disable-cpplibs \
 		--disable-sse \
+		--disable-3dnow \
 		--disable-altivec \
+		--disable-doxgen-docs \
 		--disable-local-xmms-plugin \
 		--disable-xmms-plugin \
 		--disable-ogg \
 		--disable-oggtest \
-		--disable-thorough-tests \
 		--disable-debug \
-		--disable-examples \
 		--host=$(HOST_TARGET) \
 		--build=$(HOST_BUILD) ; \
 	)
