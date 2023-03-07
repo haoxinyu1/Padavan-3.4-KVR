@@ -11,7 +11,7 @@
 # Fix rule to not be removed, $TAG has wrongly added underscore(_) at beginning of $TAG
 modprobe xt_TPROXY
 modprobe xt_set
-TAG="SS_SPEC_"   # comment tag 
+TAG="SS_SPEC_"   # comment tag
 ipt_n="iptables -t nat"  # alias of iptables
 ipt_m="iptables -t mangle"  # alias of iptables
 FWI=/tmp/shadowsocks_iptables.save  # firewall include file
@@ -113,7 +113,6 @@ EOF
 	if [ ! -f "/tmp/dnsmasq.dom/gfwlist_list.conf" ] ; then
 	lua /etc_ro/ss/gfwcreate.lua
 	fi
-
 	elif [ "$RUNMODE" = "gfw" ] ;then
 	ipset -N gfwlist hash:net 2>/dev/null
 	$ipt_n -A SS_SPEC_WAN_AC -m set --match-set china dst -j RETURN
