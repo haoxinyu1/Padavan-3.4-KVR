@@ -2070,7 +2070,7 @@ applydb_cgi(webs_t wp, char *urlPrefix, char *webDir, int arg,
 				temp=strstr(dbjson[j], "=");
 				strcpy(dbval, temp+1);
 				strncpy(dbvar, dbjson[j], strlen(dbjson[j])-strlen(temp));
-			//logmessage("HTTPD", "name: %s post: %s", dbvar, userm);
+			logmessage("HTTPD", "name: %s post: %s", dbvar, userm);
 			if(strcmp(dbval,userm) == 0)
 				doSystem("dbus remove %s", dbvar);
 			else if(strcmp(dbval,useping) == 0)
@@ -4521,6 +4521,7 @@ struct ej_handler ej_handlers[] =
 	{ "rules_count", rules_count_hook},
 	{ "pdnsd_status", pdnsd_status_hook},
 	{ "dns2tcp_status", dns2tcp_status_hook},
+	{ "dnsproxy_status", dnsproxy_status_hook},
 #endif
 #if defined (APP_ZEROTIER)
 	{ "zerotier_status", zerotier_status_hook},
