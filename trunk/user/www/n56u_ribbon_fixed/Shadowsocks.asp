@@ -1582,10 +1582,7 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 												</div>
 												<table width="100%" cellpadding="4" cellspacing="0" class="table">
 													<tr>
-														<th width="50%"><#Client#> <#running_status#>
-															<br />
-															国内和国外的GeoIP和谷歌访问
-														</th>
+														<th width="50%"><#Client#> <#running_status#> <br />国内和国外的GeoIP和谷歌访问</th>
 														<td id="ss_status"></td>
 													</tr>
 													<tr id="row_pdnsd_run">
@@ -1593,8 +1590,7 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 														<td id="dns2tcp_status"></td>
 													</tr>
 													<tr id="row_dnsproxy_run">
-														<th width="50%">dnsproxy<#running_status#>
-														</th>
+														<th width="50%">dnsproxy<#running_status#></th>
 														<td id="dnsproxy_status"></td>
 													</tr>
 													<tr>
