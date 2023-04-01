@@ -1593,8 +1593,8 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 												<table width="100%" cellpadding="4" cellspacing="0" class="table">
 													<tr>
 														<th width="50%">客户端<#running_status#>
-														</th>
-														<th>国内和国外的GeoIP和谷歌访问
+															<br />
+															国内和国外的GeoIP和谷歌访问
 														</th>
 														<td id="ss_status"></td>
 													</tr>
