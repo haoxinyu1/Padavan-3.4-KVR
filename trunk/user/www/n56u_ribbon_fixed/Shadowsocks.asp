@@ -1598,8 +1598,6 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 														</th>
 														<td id="ss_status"></td>
 													</tr>
-													</th>
-													</tr>
 													<tr id="row_pdnsd_run">
 														<th width="50%">dns2tcp<#running_status#>
 														</th>
