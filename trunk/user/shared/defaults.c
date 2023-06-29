@@ -155,7 +155,7 @@ struct nvram_pair router_defaults[] = {
 	{ "https_clist", DEF_HTTPS_CIPH_LIST },	/* HTTPS SSL cipher list */
 	{ "fw_dos_x", "0" },			// oleg patch
 	{ "dr_enable_x", "1" },			// oleg patch
-	{ "mr_enable_x", "1" },			// oleg patch
+	{ "mr_enable_x", "0" },			// oleg patch
 	{ "mr_qleave_x", "1" },
 
 #if BOARD_HAS_5G_RADIO
@@ -758,6 +758,7 @@ struct nvram_pair router_defaults[] = {
 	{ "ss_black", "0" },
 #endif
 	
+#if defined(APP_WYY)
 	/*UnblockNeteaseMusic*/
 	{ "wyy_enable", "0" },
 	{ "wyy_apptype", "cloud" },
@@ -767,17 +768,22 @@ struct nvram_pair router_defaults[] = {
 	{ "wyy_coustom_music", "" },
 	{ "wyy_flac", "0" },
 	{ "wyy_staticnum_x", "0" },
-	
+#endif
+
+#if defined(APP_ZEROTIER)
 	/*Zerotier*/
 	{ "zerotier_enable", "0" },
 	{ "zerotier_id", "" },
-	{ "zerotier_nat", "0" },
+	{ "zerotier_nat", "1" },
 	{ "zerotier_secret", "" },
 	{ "zero_staticnum_x", "0" },
+#endif
 
+#if defined(APP_DDNSTO)
 	/*DDNSTO*/
 	{ "ddnsto_enable", "0" },
 	{ "ddnsto_id", "" },
+#endif
 
 #if defined(APP_ALDRIVER)
 	/*阿里云盘*/
@@ -794,7 +800,7 @@ struct nvram_pair router_defaults[] = {
 	{ "ald_domain_id", "0" },
 	{ "ald_no_trash", "0" },
 	{ "ald_read_only", "0" },
-#endif	
+#endif
 	/*autoreboot*/
 	{ "reboot_schedule_enable", "0" },
 	{ "reboot_schedule", "00000000000" },
@@ -997,7 +1003,7 @@ struct nvram_pair router_defaults[] = {
 	{ "gw_arp_ping", "0" },
 	{ "ez_action_short", "0" },
 #if defined(BOARD_CR660x)
-	{ "ez_action_long", "15" },
+	{ "ez_action_long", "15" },		/* Reset */
 #else
 	{ "ez_action_long", "0" },
 #endif
@@ -1205,6 +1211,7 @@ struct nvram_pair tables_defaults[] = {
 	{ "v2_http2_path_x", "" },
 	{ "v2_tls_x", "0" },
 #endif
+
 #if defined(APP_SMARTDNS)
 	{ "sdnss_enable_x", "" },
 	{ "sdnss_name_x", "" },
@@ -1212,6 +1219,9 @@ struct nvram_pair tables_defaults[] = {
 	{ "sdnss_port_x", "" },
 	{ "sdnss_type_x", "" },
 	{ "sdnss_ipc_x", "" },
+	{ "sdnss_named_x", "" },
+	{ "sdnss_ipset_x", "" },
+	{ "sdnss_non_x", "" },
 #endif
 
 	{ "dhcp_staticmac_x", "" },
