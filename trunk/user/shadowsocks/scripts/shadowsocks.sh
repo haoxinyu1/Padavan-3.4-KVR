@@ -31,6 +31,7 @@ wan_fw_ips="/tmp/blackip.txt"
 lan_fp_ips="/tmp/lan_ip.txt"
 lan_gm_ips="/tmp/lan_gmip.txt"
 run_mode=`nvram get ss_run_mode`
+ss_turn=`nvram get ss_turn`
 lan_con=`nvram get lan_con`
 GLOBAL_SERVER=`nvram get global_server`
 socks=""
@@ -496,7 +497,7 @@ start_watchcat() {
 		let total_count=server_count+redir_tcp+redir_udp+tunnel_enable+v2ray_enable+local_enable+pdnsd_enable_flag+chinadnsng_enable_flag
 		if [ $total_count -gt 0 ]; then
 			#param:server(count) redir_tcp(0:no,1:yes)  redir_udp tunnel kcp local gfw
-			/usr/bin/ss-monitor $server_count $redir_tcp $redir_udp $tunnel_enable $v2ray_enable $local_enable $pdnsd_enable_flag $chinadnsng_enable_flag >/dev/null 2>&1 &
+			/usr/bin/ssr-monitor $server_count $redir_tcp $redir_udp $tunnel_enable $v2ray_enable $local_enable $pdnsd_enable_flag $chinadnsng_enable_flag >/dev/null 2>&1 &
 		fi
 	fi
 }
@@ -546,7 +547,8 @@ ssp_start() {
 ssp_close() {
 	rm -rf /tmp/cdn
 	/usr/bin/ss-rules -f
-	kill -9 $(ps | grep ss-monitor | grep -v grep | awk '{print $1}') >/dev/null 2>&1
+	kill -9 $(ps | grep ssr-switch | grep -v grep | awk '{print $1}') >/dev/null 2>&1
+	kill -9 $(ps | grep ssr-monitor | grep -v grep | awk '{print $1}') >/dev/null 2>&1
 	kill_process
 	cgroups_cleanup
 	sed -i '/no-resolv/d' /etc/storage/dnsmasq/dnsmasq.conf
@@ -677,6 +679,7 @@ start)
 	ssp_start
 	;;
 stop)
+	killall -q -9 ssr-switch
 	ssp_close
 	;;
 restart)
