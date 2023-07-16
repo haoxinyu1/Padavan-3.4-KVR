@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title><#Web_Title#> - AdGuard Home</title>
+<title><#Web_Title#> - <#menu5_21#></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
@@ -116,7 +116,7 @@ function done_validating(action){
 				<div class="row-fluid">
 					<div class="span12">
 						<div class="box well grad_colour_dark_blue">
-							<h2 class="box_head round_top"><#menu5_33#> - <#menu5_33_1#></h2>
+							<h2 class="box_head round_top"><#menu5_28#> - <#menu5_29#></h2>
 							<div class="round_bottom">
 							<div>
                             <ul class="nav nav-tabs" style="margin-bottom: 10px;">
@@ -124,7 +124,7 @@ function done_validating(action){
                                     <a href="Advanced_smartdns.asp"><#menu5_24#></a>
                                 </li>
 								 <li class="active">
-                                    <a href="Advanced_adguardhome.asp"><#menu5_33#></a>
+                                    <a href="Advanced_adguardhome.asp"><#menu5_28#></a>
                                 </li>
                             </ul>
                         </div>
