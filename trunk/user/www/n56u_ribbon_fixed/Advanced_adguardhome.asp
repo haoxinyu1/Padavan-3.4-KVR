@@ -56,7 +56,7 @@ function applyRule(){
 }
 
 function showmenu(){
-showhide_div('sdnslink', 0);
+showhide_div('sdnslink', found_app_smartdns());
 }
 
 function done_validating(action){
